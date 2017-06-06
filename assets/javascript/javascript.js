@@ -12,7 +12,7 @@ function displaySport() {
 		$(".sports").empty();
 
 		for (var i = 0; i < 10; i++) {
-			$(".sports").html("<div>" + response.data[i].rating + "</div>").attr("id", "newDiv" + i); //fix
+			$(".sports").append("<div>" + response.data[i].rating + "</div>").attr("id", "newDiv" + i); //fix
 			//$(".sports").append("newDiv" + i); 
 			$("#newDiv" + i).append("<img src=" + response.data[i].images.original_still.url + ">" + "</img>"); //fix
 			console.log(response.data[i].rating); //works
