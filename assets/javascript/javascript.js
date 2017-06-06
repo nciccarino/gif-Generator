@@ -1,4 +1,4 @@
-var sports = ["NFL", "NBA", "MLB", "NHL"];
+var sports = ["NFL", "NBA", "MLB", "NHL", "NCAA"];
 
 function displaySport() {
 	var sport = $(this).attr("data-name"); 
@@ -9,10 +9,13 @@ function displaySport() {
 		url: queryURL,
 		method: "GET"
 	}).done(function(response){
+		$(".sports").empty();
+
 		for (var i = 0; i < 10; i++) {
-			$("#sports").html("<div>" + response.data[i].rating + "</div>").attr("id", "newDiv" + i); //fix
+			$(".sports").html("<div>" + response.data[i].rating + "</div>").attr("id", "newDiv" + i); //fix
+			//$(".sports").append("newDiv" + i); 
 			$("#newDiv" + i).append("<img src=" + response.data[i].images.original_still.url + ">" + "</img>"); //fix
-			console.log(response.data[i].rating); 
+			console.log(response.data[i].rating); //works
 			console.log(response.data[i].images.original_still.url); //works
 			console.log("-------------------------");
 		}
@@ -37,7 +40,9 @@ $("#addSport").on("click", function(){
 	var sport = $("#sportsInput").val().trim(); 
 	sports.push(sport);
 	renderButtons();
-}) //working 
+	$("#sportsInput").val(""); 
+
+}) //working
 
 $(document).on("click", ".sport", displaySport);
 
