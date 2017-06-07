@@ -3,7 +3,7 @@ var sports = ["NFL", "NBA", "MLB", "NHL", "NASCAR", "NCAA Basketball", "NCAA Foo
 
 function displaySport() {
 	var sport = $(this).attr("data-name"); 
-	var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + sport + "&limit=10&api_key=dc6zaTOxFJmzC"; 
+	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + sport + "&limit=10&api_key=dc6zaTOxFJmzC"; 
 	//console.log(queryURL); //working
 
 	$.ajax({
