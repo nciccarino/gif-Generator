@@ -1,4 +1,5 @@
-var sports = ["NFL", "NBA", "MLB", "NHL", "NCAA"];
+
+var sports = ["NFL", "NBA", "MLB", "NHL", "NASCAR", "NCAA Basketball", "NCAA Football", "Snowboarding", "Skiing", "Boxing", "Soccer", "Skateboarding", "BMX", "MMA", "X Games", "NBA Finals", "Final Four", "Super Bowl", "The Olympics"];
 
 function displaySport() {
 	var sport = $(this).attr("data-name"); 
@@ -19,7 +20,7 @@ function displaySport() {
 			console.log(response.data[i].images.original_still.url); //works
 			console.log("-------------------------");
 		}
-	}); //needs work
+	}); 
 
 		$(document).on("click", ".gif", function(){
 			 var state = $(this).attr("data-state");

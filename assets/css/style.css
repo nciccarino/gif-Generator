@@ -1,0 +1,45 @@
+body {
+	background-color: #000; 
+	height: 100%;
+}
+
+header { 
+	margin: 10px;
+	padding: 10px;
+}
+
+#headerName {
+	font-family: sans-serif;
+	font-weight: bold; 
+}
+
+#container {
+	background-color: black; 
+	color: white;
+}
+
+.sport {
+	padding: 10px;
+	margin: 10px;
+}
+
+#sportsForm {
+	margin: 10px;
+}
+
+#sportsButtons {
+	color: black;
+}
+
+.sports {
+	margin: 10px;
+	font-weight: bold; 
+}
+
+.gif {
+	margin: 10px;
+}
+
+#addSport {
+	color: black;
+}
