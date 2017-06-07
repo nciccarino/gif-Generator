@@ -25,6 +25,11 @@ header {
 
 #sportsForm {
 	margin: 10px;
+	color: black;
+}
+
+#sporty {
+	color: white;
 }
 
 #sportsButtons {
