@@ -12,14 +12,27 @@ function displaySport() {
 		$(".sports").empty();
 
 		for (var i = 0; i < 10; i++) {
-			$(".sports").append("<div>" + response.data[i].rating + "</div>").attr("id", "newDiv" + i); //fix
-			//$(".sports").append("newDiv" + i); 
-			$("#newDiv" + i).append("<img src=" + response.data[i].images.original_still.url + ">" + "</img>"); //fix
+			$(".sports").append("<div>Rated: " + response.data[i].rating + "</div>").attr("id", "newDiv" + i); 
+			$("#newDiv" + i).append("<img src=\'" + response.data[i].images.fixed_height_still.url + "\' data-still=\'" + response.data[i].images.fixed_height_still.url + "\' data-animate=\'" + response.data[i].images.fixed_height.url + "\' data-state=\'still\' class=\'gif\'>");
+
 			console.log(response.data[i].rating); //works
 			console.log(response.data[i].images.original_still.url); //works
 			console.log("-------------------------");
 		}
-	}); //needs work-- why doesnt more then one picture appear? 
+	}); //needs work
+
+		$(document).on("click", ".gif", function(){
+			 var state = $(this).attr("data-state");
+			 if (state === "still") {
+			    $(this).attr("src", $(this).attr("data-animate"));
+			    $(this).attr("data-state", "animate");
+			  }
+			  else {
+			    $(this).attr("src", $(this).attr("data-still"));
+			    $(this).attr("data-state", "still");
+			  }
+			});
+
 }
 
 function renderButtons() {
